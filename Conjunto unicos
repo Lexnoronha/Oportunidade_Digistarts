@@ -1,0 +1,24 @@
+import pandas as pd
+
+conjunto = []
+continuar = 'S'
+
+while continuar == 'S':
+  
+  try:
+    entrada = int(input('Digite um numero inteiro '))
+    conjunto.append(entrada)
+  except:
+    print('*'*30)
+    print("Digite um valor inteiro".upper())
+    print('*'*30)
+
+  if entrada in conjunto:
+    duplicado = entrada
+  
+  continuar = str(input('Deseja continuar? ').upper())
+
+conjunto_saida = pd.unique(conjunto).tolist()
+print('*'*30)
+print(f'Conjunto sem duplicadas {conjunto_saida}')
+print(f'Valor Duplicado [{duplicado}]')
